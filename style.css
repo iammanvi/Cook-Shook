@@ -17,6 +17,8 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*An element with greater stack order(greter no) is always in front of an element 
+    with a lower stack order. z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky) and flex items (elements that are direct children of display:flex elements) */
     z-index: 1;
 }
 
@@ -33,6 +35,8 @@ header nav form{
 }
 
 form input[type="text"] {
+    /* The flex-grow property specifies how much the item will grow(in width usually) relative to the rest of the flexible items inside the same container.
+    Note: If the element is not a flexible item, the flex-grow property has no effect. */
     flex-grow: 1;
     margin-right: 10px;
 }
@@ -49,6 +53,7 @@ form button[type="submit"] {
     background-color: #f44336;
     color: #fff;
     cursor: pointer;
+    /* buttons hover functions color changes slowly */
     transition: background-color 0.2s ease-in-out ;
 }
 
@@ -63,7 +68,9 @@ form button[type="submit"]:hover,
     text-align: center;
     margin-top: 20px;
     display: grid;
+    /* it auto-fit all the images on page with min width = 300px and max width = 1fr */
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); 
+    /* gap came vertically */
     grid-gap:40px ; 
     width: 80%;
     margin: 10px auto;
@@ -85,6 +92,7 @@ form button[type="submit"]:hover,
 }
 
 .recipe:hover {
+    /* The scale() method increases or decreases the size of an element  and here hover is present to taking cursor on that it will pop up*/
     transform: scale(1.03);
 }
 
@@ -126,6 +134,7 @@ form button[type="submit"]:hover,
     position: fixed;
     top: 50%;
     left: 50%;
+    /* transform: translate(x, y); //where x=horizontal, y=vertical position change */
     transform: translate(-50%, -50%);
     -webkit-transform: traslate(-50%, -50%);
     background-color: #E2C799;
@@ -135,6 +144,7 @@ form button[type="submit"]:hover,
     height: 60%;
     font-size: 20px;
     transition: all 0.5s ease-in-out;
+    /* //vertically all the info that is overflowing that is now shown using scroll bar */
     overflow-y: scroll; 
     
 }
@@ -219,4 +229,3 @@ body::-webkit-scrollbar-track {
     }
     
 }
- 
